@@ -17,6 +17,10 @@ body {
   background-color: var(--color-dark);
 }
 
+main {
+  flex-grow: 1;
+}
+
 h1,
 .h1,
 h2,
