@@ -5,6 +5,13 @@
     padding-block: fluid(120, 40);
     background-color: var(--color-dark-10);
 
+    &-inner {
+      &:has(.section__link) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
+    }
+
     &-info {
       display: grid;
       align-items: start;
