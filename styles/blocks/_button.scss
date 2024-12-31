@@ -1,4 +1,4 @@
-@use "../helpers" as *;
+@use '../helpers' as *;
 
 .button {
   display: inline-flex;
@@ -29,5 +29,9 @@
     background-color: var(--color-accent);
     border-color: var(--color-accent);
     border-radius: rem(8);
+  }
+
+  &--dark-gray {
+    background-color: var(--color-dark-10);
   }
 }
