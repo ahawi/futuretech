@@ -1,8 +1,8 @@
-@use '../helpers/' as *;
+@use '../helpers' as *;
 
 .download-info {
   display: inline-grid;
-  grid-template-columns: 1fr, auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   column-gap: rem(50);
 
@@ -11,13 +11,13 @@
   }
 
   &__team {
-    --personImageSize: rem(50);
+    --personImageSize: #{rem(50)};
 
     background-color: var(--color-dark);
     border-radius: rem(12);
 
     @include laptop {
-      --personImageSize: rem(40);
+      --personImageSize: #{rem(40)};
     }
   }
 }
