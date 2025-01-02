@@ -1569,6 +1569,36 @@ a button[aria-label]::before {
 }
 .bordered-grid--2-cols {
   --columns: 2;
+  --itemPaddingX: 5rem;
+}
+@media (width <= 90.06125rem) {
+  .bordered-grid--2-cols {
+    --itemPaddingX: 3.125rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .bordered-grid--2-cols {
+    --columns: 1;
+  }
+}
+.bordered-grid--2-cols .bordered-grid__item:nth-child(odd) {
+  padding-right: var(--itemPaddingX);
+  border-right: var(--border);
+}
+.bordered-grid--2-cols .bordered-grid__item:nth-child(even) {
+  position: relative;
+  padding-left: var(--itemPaddingX);
+}
+.bordered-grid--2-cols .bordered-grid__item:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  left: auto;
+  right: 100%;
+  bottom: 0;
+  translate: 50%;
+  width: 100vw;
+  height: 0.0625rem;
+  background-color: var(--color-dark-15);
 }
 .bordered-grid--3-cols {
   --columns: 3;
@@ -1588,11 +1618,12 @@ a button[aria-label]::before {
     position: relative;
   }
   .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1)::before {
+    content: "";
     position: absolute;
     left: 50%;
-    translate: -50%;
-    content: "";
+    right: auto;
     bottom: 0;
+    translate: -50%;
     width: 100vw;
     height: 0.0625rem;
     background-color: var(--color-dark-15);
@@ -1922,4 +1953,18 @@ a button[aria-label]::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22.375rem, 1fr));
   gap: 1.875rem;
+}
+
+.video-card {
+  display: grid;
+  row-gap: 1.875rem;
+}
+@media (width <= 90.06125rem) {
+  .video-card {
+    row-gap: 1.25rem;
+  }
+}
+.video-card__body {
+  display: grid;
+  row-gap: clamp(0.25rem, 0.1544117647rem + 0.3921568627vw, 0.625rem);
 }/*# sourceMappingURL=main.css.map */
